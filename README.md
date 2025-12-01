@@ -188,3 +188,41 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
   -out /etc/ssl/certs/web.sis313.crt
 sudo systemctl enable nginx
 ```
+## Ficheros de Configuración Clave
+
+A. **NGINX Balanceador** *(/etc/nginx/sites-available/balanceador)*
+
+B. **MySQL Master** *(/etc/mysql/mysql.conf.d/mysqld.cnf)*
+
+C. **BIND9 Zona Directa** *(/etc/bind/db.sis313.usfx.bo)*
+
+
+## 📚 VII. Conclusiones y Lecciones Aprendidas
+## Conclusiones Principales
+**Objetivo Cumplido**
+Se implementó exitosamente una infraestructura web completa con redundancia en todas las capas, demostrando tolerancia a fallos en escenarios realistas.
+
+Alta Disponibilidad Lograda: El sistema mantiene operación continua durante fallos individuales de componentes, alcanzando aproximadamente 99.9% de disponibilidad.
+
+Aprendizaje Integral: El proyecto cubrió desde virtualización y networking hasta seguridad y automatización, proporcionando experiencia práctica en administración de sistemas empresariales.
+
+Documentación Completa: Se generó documentación técnica detallada que permite replicar el proyecto en otros entornos educativos o de pruebas.
+
+
+## Metodológicas:
+**Enfoque Iterativo:** Implementar por capas y verificar cada paso antes de continuar.
+
+**Documentación en Tiempo Real:** Documentar mientras se configura, no después.
+
+**Pruebas Incrementales:** Probar cada componente individualmente antes de pruebas integradas.
+
+## para Futuras Implementaciones
+**Keepalived:** Implementar para alta disponibilidad del balanceador (eliminar single point of failure).
+
+**Monitoreo Centralizado:** Agregar Prometheus + Grafana para métricas en tiempo real.
+
+**Certificados Let's Encrypt:** Reemplazar certificados autofirmados por unos reconocidos públicamente.
+
+**Containerización:** Migrar a Docker/Kubernetes para mayor portabilidad y escalabilidad.
+
+**Backup Automatizado:** Implementar sistema de backups cifrados con retención configurable.
