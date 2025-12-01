@@ -128,9 +128,63 @@ Ambas instancias de aplicación son idénticas en hardware y configuración.
 
 ### 5.2. Despliegue Paso a Paso
 
-#### **Fase 1: Preparación del Entorno**
+### **Fase 1: Preparación del Entorno**
 ```bash
 # En todas las máquinas
 sudo apt update && sudo apt upgrade -y
 sudo apt install git curl wget vim ufw -y
 sudo hostnamectl set-hostname [nombre-del-servidor]
+````
+## Fase 2: Configuración Individual por Servidor
+
+## A. DNS Primario (192.168.100.10)
+```bash
+# bind9
+sudo apt install bind9 bind9utils bind9-doc -y
+# poner en servicio bind9
+sudo systemctl enable bind9
+```
+
+## B. DNS Secundario (192.168.100.11)
+```bash
+# instalar bind9
+sudo apt install bind9 bind9utils bind9-doc -y
+```
+
+## C. DB Master (192.168.100.201)
+```bash
+# instalar mysql
+sudo apt install mysql-server mdadm -y
+# Configurar replicación y RAID
+mysql -u root -p -e "CREATE USER 'replica'@'%' IDENTIFIED BY 'replipass';"
+```
+
+## D. DB Slave (192.168.100.202)
+```bash
+# instalar mysql
+sudo apt install mysql-server -y
+# Configurar como esclavo
+CHANGE MASTER TO MASTER_HOST='192.168.100.201', ...;
+START SLAVE;
+```
+
+## E. App Servers (192.168.100.101 y 192.168.100.102)
+```bash
+# Ver scripts/apps/node-app-setup.sh
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt install nodejs vsftpd -y
+git clone https://github.com/[usuario]/SIS313-Infraestructura-Tolerante-Fallos.git
+cd apps/node-app && npm install
+sudo systemctl enable node-app
+```
+
+## F. Load Balancer (192.168.100.252)
+```bash
+# Ver scripts/config/nginx/lb-setup.sh
+sudo apt install nginx openssl -y
+# Generar certificados SSL
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+  -keyout /etc/ssl/private/web.sis313.key \
+  -out /etc/ssl/certs/web.sis313.crt
+sudo systemctl enable nginx
+```
