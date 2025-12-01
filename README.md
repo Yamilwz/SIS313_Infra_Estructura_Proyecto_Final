@@ -226,3 +226,5 @@ Documentación Completa: Se generó documentación técnica detallada que permit
 **Containerización:** Migrar a Docker/Kubernetes para mayor portabilidad y escalabilidad.
 
 **Backup Automatizado:** Implementar sistema de backups cifrados con retención configurable.
+
+[anexos](https://github.com/Yamilwz/SIS313_Infra_Estructura_Proyecto_Final/blob/main/informe%20de%20la%20realizacion)
