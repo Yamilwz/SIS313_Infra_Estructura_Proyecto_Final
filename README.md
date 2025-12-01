@@ -227,4 +227,4 @@ Documentación Completa: Se generó documentación técnica detallada que permit
 
 **Backup Automatizado:** Implementar sistema de backups cifrados con retención configurable.
 
-[anexos](https://github.com/Yamilwz/SIS313_Infra_Estructura_Proyecto_Final/blob/main/informe%20de%20la%20realizacion)
+[anexos]([https://github.com/Yamilwz/SIS313_Infra_Estructura_Proyecto_Final/blob/main/informe%20de%20la%20realizacion](https://github.com/Yamilwz/SIS313_Infra_Estructura_Proyecto_Final/blob/91e864c6018a4b305eab782c2c908330347420f9/Informe%20de%20defensa%20de%20infra%20estructura%20para%20un%20balaceador.docx))
