@@ -1,2 +1,40 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+## 📁 ESTRUCTURA DEL REPOSITORIO
+SIS313-Infraestructura-Tolerante-Fallos/
+├── 📄 README.md                    # Documentación principal
+├── 📁 docs/
+│   ├── 📄 proyecto.md              # Documento completo en formato solicitado
+│   ├── 📄 arquitectura.md          # Diagramas y diseño
+│   └── 📄 defensa.md              # Guía para la presentación
+├── 📁 scripts/
+│   ├── 📄 setup-completo.sh        # Script de instalación automática
+│   ├── 📄 verificacion.sh          # Script de verificación
+│   └── 📄 pruebas-fallos.sh        # Script de pruebas de tolerancia
+├── 📁 config/
+│   ├── 📁 nginx/
+│   │   ├── 📄 balanceador.conf     # Configuración NGINX
+│   │   └── 📄 ssl.conf            # Configuración TLS
+│   ├── 📁 dns/
+│   │   ├── 📄 named.conf.local    # Configuración BIND9
+│   │   ├── 📄 db.sis313.usfx.bo   # Zona directa
+│   │   └── 📄 db.192.168.100      # Zona inversa
+│   └── 📁 mysql/
+│       ├── 📄 master.cnf          # Config MySQL maestro
+│       └── 📄 slave.cnf           # Config MySQL esclavo
+├── 📁 apps/
+│   ├── 📁 node-app/
+│   │   ├── 📄 index.js            # Servidor Node.js
+│   │   ├── 📄 package.json        # Dependencias
+│   │   └── 📁 public/
+│   │       └── 📄 index.html      # Frontend
+│   └── 📁 failover-db/
+│       └── 📄 index-con-failover.js # Versión con failover automático
+├── 📁 evidencias/
+│   ├── 📁 capturas/
+│   │   ├── 📄 arquitectura.png    # Diagrama de red
+│   │   ├── 📄 funcionamiento.png  # App funcionando
+│   │   └── 📄 pruebas-fallo.png   # Evidencias de pruebas
+│   └── 📁 logs/
+│       └── 📄 pruebas.log         # Logs de pruebas
+└── 📁 presentacion/
+    ├── 📄 slides.md               # Presentación en Markdown
+    └── 📄 demo-script.sh          # Script para la demostración
