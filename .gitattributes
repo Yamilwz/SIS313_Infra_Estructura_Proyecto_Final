@@ -1,6 +1,7 @@
 ## 📁 ESTRUCTURA DEL REPOSITORIO
 SIS313-Infraestructura-Tolerante-Fallos/
-├── 📄 README.md                    # Documentación principal
+texte=auto {
+📄 README.md                    # Documentación principal
 ├── 📁 docs/
 │   ├── 📄 proyecto.md              # Documento completo en formato solicitado
 │   ├── 📄 arquitectura.md          # Diagramas y diseño
@@ -38,3 +39,4 @@ SIS313-Infraestructura-Tolerante-Fallos/
 └── 📁 presentacion/
     ├── 📄 slides.md               # Presentación en Markdown
     └── 📄 demo-script.sh          # Script para la demostración
+}
